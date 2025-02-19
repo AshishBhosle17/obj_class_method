@@ -6,14 +6,14 @@ class Emp {
 	int id = 9;
 	String name = "ashish";
 	double sal = 2000;
-	
+
 	public Emp(int id, String name, double sal) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.sal = sal;
 	}
-	
+
 	@Override
 	protected void finalize() throws Throwable {
 		// TODO Auto-generated method stub
@@ -42,35 +42,36 @@ class Emp {
 		return id == other.id && Objects.equals(name, other.name)
 				&& Double.doubleToLongBits(sal) == Double.doubleToLongBits(other.sal);
 	}
-	
+
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return super.clone();
 	}
-	
+
 }
+
 public class Main {
 	public static void main(String[] args) {
-		
+
 		// Creating an object of Emp
-        Emp emp1 = new Emp(1, "John", 5000);
-        Emp emp2 = new Emp(2, "Doe", 6000);
+		Emp emp1 = new Emp(1, "John", 5000);
+		Emp emp2 = new Emp(2, "Doe", 6000);
 
-        // Printing emp1
-        System.out.println(emp1.toString());
+		// Printing emp1
+		System.out.println(emp1.toString());
 
-        // Checking equality of two objects
-        System.out.println("emp1.equals(emp2): " + emp1.equals(emp2));
+		// Checking equality of two objects
+		System.out.println("emp1.equals(emp2): " + emp1.equals(emp2));
 
-        // Getting hash code
-        System.out.println("emp1 HashCode: " + emp1.hashCode());
-        System.out.println("emp2 HashCode: " + emp2.hashCode());
+		// Getting hash code
+		System.out.println("emp1 HashCode: " + emp1.hashCode());
+		System.out.println("emp2 HashCode: " + emp2.hashCode());
 
-        // Calling finalize explicitly (not recommended, only for testing)
-        emp1 = null;
-        System.gc(); // Requesting garbage collection (not guaranteed to run immediately)
-        
+		// Calling finalize explicitly
+		emp1 = null;
+		System.gc(); // Requesting garbage collection
+
 	}
 
 }
