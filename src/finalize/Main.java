@@ -72,9 +72,9 @@ public class Main {
 		Emp empClone = (Emp) emp1.clone();
 		System.out.println(empClone);
 
-		// Calling finalize explicitly (not recommended, only for testing)
+		// Calling finalize explicitly
 		emp1 = null;
-		System.gc(); // Requesting garbage collection (not guaranteed to run immediately)
+		System.gc(); // Requesting garbage collection
 
 	}
 
